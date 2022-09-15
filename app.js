@@ -22,7 +22,6 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/api/users', usersRouter);
-app.use('/api/products', productRouter);
+app.use('/users', usersRouter);
 
 module.exports = app;
