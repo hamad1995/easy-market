@@ -9,8 +9,8 @@ const usersRouter = require('./routes/users');
 const categoriesRouter = require('./routes/categories');
 const productsRouter = require('./routes/products');
 const ordersRouter = require('./routes/orders');
-
-
+require("reflect-metadata");
+require("dotenv").config();
 //DB connection
 const eMarket = path.join(__dirname, "database", "easymarket.db");
 const db = new sqlite3.Database(eMarket, (err) => {
