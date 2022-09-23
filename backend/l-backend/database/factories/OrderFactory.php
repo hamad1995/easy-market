@@ -19,12 +19,10 @@ class OrderFactory extends Factory
     public function definition()
     {
         $users =User::pluck('id')->toArray();
-        $order_items =Order_items::pluck('id')->toArray();
 
         return [
 
             'user_id' => fake()->randomElement($users),
-            'order_items_id' => fake()->randomElement($order_items),
             'status' => fake()->randomElement(['done','shipping','preparing']),
 
         ];
