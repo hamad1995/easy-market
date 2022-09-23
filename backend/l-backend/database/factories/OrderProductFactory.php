@@ -7,9 +7,9 @@ use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\OrderProduct>
  */
-class OrderItemsFactory extends Factory
+class OrderProductFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,12 +18,14 @@ class OrderItemsFactory extends Factory
      */
     public function definition()
     {
-        $orders = Order::pluck('id')->toArray();
         $products = Product::pluck('id')->toArray();
-
+        $orders = Order::pluck('id')->toArray();
         return [
-            'order_id' => fake()->randomElement($orders),
-            'product_id' => fake()->randomElement($products),
-            'quantity' => fake()->numberBetween(1,10),        ];
+
+
+            'product_id'=>fake()->randomElement($products),
+            'order_id'=>fake()->randomElement($orders),
+
+        ];
     }
 }
