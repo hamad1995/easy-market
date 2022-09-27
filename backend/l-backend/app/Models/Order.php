@@ -12,11 +12,11 @@ class Order extends Model
         'user_id',
         'status',
     ];
-    public function orders()
+    public function orderItem()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->hasMany(OrderItem::class);
     }
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class, 'User_id');
     }
