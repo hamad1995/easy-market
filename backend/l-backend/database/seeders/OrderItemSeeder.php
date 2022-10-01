@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class OrderItemsSeeder extends Seeder
+class OrderItemSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class OrderItemsSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\Order_items::factory(10)->create();
+        \App\Models\OrderItem::factory(50)->create();
 
     }
 }

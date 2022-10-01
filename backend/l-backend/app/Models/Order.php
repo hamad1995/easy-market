@@ -10,14 +10,13 @@ class Order extends Model
     use HasFactory;
     protected $fillable = [
         'user_id',
-        'order_items_id',
         'status',
     ];
-    public function orders()
+    public function orderItem()
     {
-        return $this->hasMany(Order_items::class, 'Order_items_id');
+        return $this->hasMany(OrderItem::class);
     }
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class, 'User_id');
     }
